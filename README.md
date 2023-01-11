@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Job Connect - A social sharing platform for professionals
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+(insert AmIResponsive image)
 
-## Available Scripts
+# About this wesbite:
 
-In the project directory, you can run:
+Job Connect is a social networking site which links to professionals together in a much more collaboartive way.  Linking existing sites together, such as LinkedIn and Instagram, I wanted to create a platform where professionals could interact, share their experiences in their chosen fields and help one and other in tackling their industries.  It also creates a place to meet and engage with different people who you wouldn't necessarily meet in your day to day life i.e. people working abroad.
 
-### `npm start`
+# Main Technologies Used:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Html, CSS, JavaScript
+- React.js
+- Bootstrap
+- Django REST Framework
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Agile Methodology
 
-### `npm test`
+## Concept
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Inception
 
-### `npm run build`
+## Iteration/Construction
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Release
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Production
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Retirement
 
-### `npm run eject`
+# Strategy
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# User Stories
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## The Post Page
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## The Posts Page
 
-## Learn More
+## The Profile Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Wireframe
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Deployment to Heroku
 
-### Code Splitting
+In your app
+- Add the list of requirements by writing in the terminal "pip3 freeze --local > requirements.txt"
+- Git add and git commit the changes made
+Log into Heroku
+- Log into Heroku or create a new account and log in
+- top right-hand corner click "New" and choose the option Create new app if you are a new user, the "Create new app" button will appear in the middle of the screen
+- Write the app name - it has to be unique, it cannot be the same as this app
+- Choose Region - I am in Europe
+- Click "Create App"
+The page of your project opens
+- Go to Resources Tab, Add-ons, search and add Heroku Postgres
+- Choose "settings" from the menu at the top of the page
+- Go to the section "Config Vars" and click the button "Reveal Config Vars".
+- Add the below variables to the list
+Database URL will be added automatically
+Secret_key - is the Django secret key that can be generated here.
+Go back to your code
+- Procfile needs to be created in your app
+web: gunicorn PROJ_NAME.wsgi
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- In settings in your app add Heroku to ALLOWED_HOSTS
+- Add and commit the changes in your code and push them to GitHub
+Final step - deployment
+- Next, go to "Deploy" in the menu bar at the top
+- Go to the section "deployment method", and choose "GitHub"
+- A new section will appear "Connect to GitHub" - Search for the repository to connect to
+- Type the name of your repository and click "search"
+- Once Heroku finds your repository - click "connect"
+- Scroll down to the section "Automatic Deploys"
+- Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
+- Click "Deploy branch"
+Once the program runs: You should see the message "the app was successfully deployed"
+- Click the button "View"
+The live link can be found here.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Since Heroku stopped its free service the project has been migrated and deployed through
+ElephantSQL and Render
 
-### Making a Progressive Web App
+# Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+# Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# References
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Django 3.2: Framework used to add structure to the platform
+- Django AllAuth used to provide enhanced user account functionality
+- Django templating language used to insert data from the database into the sites pages
+- Bootstrap: Framework used to add structure and responsiveness
+- Favicon Generator: Used to create favicon used on the website
+- GitHub: GitHub respository is used to store the project's code after being pushed from Gitpod
+- Google Fonts: Google fonts are used to add fonts for aesthetic and UX purposes
+- Git: Gitpod IDE was used for version control by utilizing the Gitpod terminal to commit and Push to - - - GitHub
+- AmIResponsive: Used to generate mockup image
+- lucid.app: Used to generate wireframes
+- Moments Walkthrough project via Code Institute
