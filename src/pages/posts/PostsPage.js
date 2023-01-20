@@ -15,7 +15,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fecthMoreData } from "../../utils/utlis";
+import { fetchMoreData } from "../../utils/utlis";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -76,7 +76,7 @@ function PostsPage({ message, filter = "" }) {
                 dataLength={posts.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!posts.next}
-                next={() => fecthMoreData(posts, setPosts)}
+                next={() => fetchMoreData(posts, setPosts)}
               />              
             ) : (
               <Container className={appStyles.Content}>
