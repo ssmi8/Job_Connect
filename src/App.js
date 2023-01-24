@@ -15,6 +15,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import JobCreateForm from "./pages/jobs/JobCreateForm";
+import JobPage from "./pages/jobs/JobPage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -74,6 +75,7 @@ function App() {
             render={() => <ProfileEditForm />}
           />
           <Route exact path="/jobs/create" render={() => <JobCreateForm /> } />
+          <Route exact path="/jobs/:id" render={() => <JobPage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
