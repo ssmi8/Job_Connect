@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import Job from "./Job";
 
 function JobPage() {
     const { id } = useParams();
@@ -18,8 +19,7 @@ function JobPage() {
                 const [{data: job}] = await Promise.all([
                     axiosReq.get(`/jobs/${id}`)
                 ])
-                setJob({results: [job]})
-                console.log(job)
+                setJob({results: [job]})                
             } catch (err){
                 console.log(err)
             }
@@ -33,7 +33,7 @@ function JobPage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <p>Job component</p>
+        <Job {...job.results[0]} setJob={setJob} />
         <Container className={appStyles.Content}>
           Comments
         </Container>
