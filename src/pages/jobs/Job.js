@@ -4,6 +4,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Job = (props) => {
     const {
@@ -11,6 +12,38 @@ const Job = (props) => {
         like_id, title, description, location, company, image, updated_at, jobPage, 
         setJobs
     } = props;
+
+    const handleLike = async () => {
+        try {
+          const { data } = await axiosRes.post("/likes/", { job: id });
+          setJobs((prevJobs) => ({
+            ...prevJobs,
+            results: prevJobs.results.map((job) => {
+              return job.id === id
+                ? { ...job, likes_count: job.likes_count + 1, like_id: data.id }
+                : job;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+    };
+
+    const handleUnlike = async () => {
+        try {
+          await axiosRes.delete(`/likes/${like_id}/`);
+          setJobs((prevJobs) => ({
+            ...prevJobs,
+            results: prevJobs.results.map((job) => {
+              return job.id === id
+                ? { ...job, likes_count: job.likes_count - 1, like_id: null }
+                : job;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+    };
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
@@ -46,11 +79,11 @@ const Job = (props) => {
               <i className="far fa-heart" />
             </OverlayTrigger>
           ) : like_id ? (
-            <span onClick={() => {}}>
+            <span onClick={handleUnlike}>
               <i className={`fas fa-heart ${styles.Heart}`} />
             </span>
           ) : currentUser ? (
-            <span onClick={() => {}}>
+            <span onClick={handleLike}>
               <i className={`far fa-heart ${styles.HeartOutline}`} />
             </span>
           ) : (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -25,20 +25,29 @@ const NavBar = () => {
 
   const addPostIcon = (
   <>
-    <NavLink
-    className={styles.NavLink}
-    activeClassName={styles.Active}
-    to="/posts/create"
+    <NavDropdown 
+    title="Add" 
+    id="basic-nav-dropdown"
     >
-      <i className="far fa-plus-square"></i>Add post
-    </NavLink>
-    <NavLink
-    className={styles.NavLink}
-    activeClassName={styles.Active}
-    to="/jobs/create"
-    >
-      <i className="far fa-plus-square"></i>Add job
-    </NavLink>
+      <NavDropdown.Item >
+        <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/posts/create"
+        >
+        <i className="far fa-plus-square"></i>Add post
+        </NavLink>
+      </NavDropdown.Item>
+      <NavDropdown.Item >
+        <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/jobs/create"
+        >
+        <i className="far fa-plus-square"></i>Add job
+        </NavLink>
+      </NavDropdown.Item>
+    </NavDropdown>
   </>
   );
 
