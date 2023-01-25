@@ -23,12 +23,12 @@ function JobCreateForm() {
 
   const [jobData, setJobData] = useState({
     title: "",
-    description: "",
+    content: "",
     location: "",
     company: "",
     image: "",
   });
-  const { title, description, location, company, image } = jobData;
+  const { title, content, location, company, image } = jobData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -56,7 +56,7 @@ function JobCreateForm() {
     const formData = new FormData();
 
     formData.append("title", title);
-    formData.append("description", description);
+    formData.append("content", content);
     formData.append("location", location);
     formData.append("company", company);
     formData.append("image", imageInput.current.files[0]);
@@ -93,8 +93,8 @@ function JobCreateForm() {
         <Form.Control
         as="textarea"
         rows={6}
-        name="description"
-        value={description}
+        name="content"
+        value={content}
         onChange={handleChange}
       />
       </Form.Group>
