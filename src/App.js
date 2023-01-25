@@ -17,6 +17,8 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import JobCreateForm from "./pages/jobs/JobCreateForm";
 import JobPage from "./pages/jobs/JobPage";
 import JobsPage from "./pages/jobs/JobsPage";
+import JobEditForm from "./pages/jobs/JobEditForm";
+
 
 function App() {
   const currentUser = useCurrentUser();
@@ -77,6 +79,7 @@ function App() {
           />
           <Route exact path="/jobs/create" render={() => <JobCreateForm /> } />
           <Route exact path="/jobs/:id" render={() => <JobPage />} />
+          <Route exact path="/jobs/:id/edit" render={() => <JobEditForm />} />
           <Route exact path="/jobs" render={() => <JobsPage message="No results found. Adjust the search keyword." />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>

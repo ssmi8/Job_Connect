@@ -4,6 +4,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
+import { JobPostDropdown } from '../../components/MoreDropdown';
 
 const Job = (props) => {
     const {
@@ -23,7 +24,7 @@ const Job = (props) => {
                 </Link>
                 <div className='d-flex align-items-center'>
                     <span>{updated_at}</span>
-                    {is_owner && jobPage && "..."}
+                    {is_owner && jobPage && <JobPostDropdown />}
                 </div>
             </Media>
         </Card.Body>
@@ -40,4 +41,4 @@ const Job = (props) => {
   )
 }
 
-export default Job
+export default Job;
