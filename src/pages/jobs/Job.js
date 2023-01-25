@@ -2,17 +2,32 @@ import React from 'react';
 import styles from "../../styles/Job.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Avatar from "../../components/Avatar";
-import { JobPostDropdown } from '../../components/MoreDropdown';
+import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 const Job = (props) => {
     const {
         id, owner, profile_id, profile_image, title, content, location, company, image, updated_at, jobPage, 
     } = props;
 
-     const currentUser = useCurrentUser();
+    const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
+    const history = useHistory;
+
+    const handleEdit = () => {
+      history.push(`/jobs/${id}/edit`)
+    }
+
+    const handleDelete = async () => {
+      try {
+        await axiosRes.delete(`/jobs/${id}/`);
+        history.goBack();
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
   return (
     <Card className={styles.Job}>
@@ -24,7 +39,12 @@ const Job = (props) => {
                 </Link>
                 <div className='d-flex align-items-center'>
                     <span>{updated_at}</span>
-                    {is_owner && jobPage && <JobPostDropdown />}
+                    {is_owner && jobPage && (
+                      <MoreDropdown 
+                      handleEdit={handleEdit} 
+                      handleDelete={handleDelete}
+                      />
+                    )}
                 </div>
             </Media>
         </Card.Body>

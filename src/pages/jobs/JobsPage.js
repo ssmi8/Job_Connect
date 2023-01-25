@@ -36,14 +36,8 @@ function JobsPage({message, filter = ""}) {
             }
         };
         setHasLoaded(false);
-    /* to stop the search requests after every key typed - delay response */
-    const timer = setTimeout(() => {
-      fetchJobs();
-    }, 1000)
-    return () => {
-        clearTimeout(timer)
-    }
-  }, [filter, query ,pathname]);
+        // fetchJobs();
+    }, [filter, query ,pathname]);
 
   return (
     <Row className="h-100">
