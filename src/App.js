@@ -18,6 +18,10 @@ import JobCreateForm from "./pages/jobs/JobCreateForm";
 import JobPage from "./pages/jobs/JobPage";
 import JobsPage from "./pages/jobs/JobsPage";
 import JobEditForm from "./pages/jobs/JobEditForm";
+import SkillsPage from "./pages/skills/SkillsPage";
+import SkillCreateForm from "./pages/skills/SkillCreateForm";
+import SkillEditForm from "./pages/skills/SkillEditForm";
+import SkillPage from "./pages/skills/SkillPage"
 
 
 function App() {
@@ -81,6 +85,10 @@ function App() {
           <Route exact path="/jobs/create" render={() => <JobCreateForm /> } />
           <Route exact path="/jobs/:id" render={() => <JobPage />} />
           <Route exact path="/jobs/:id/edit" render={() => <JobEditForm />} />
+          <Route exact path="/skills" render={() => <SkillsPage />} />
+          <Route exact path="/skills/create" render={() => <SkillCreateForm />} />
+          <Route exact path="/skills/:id" render={() => <SkillEditForm />} />
+          <Route exact path="/skills/:id/edit" render={() => <SkillPage />} />
           
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
