@@ -47,6 +47,15 @@ const NavBar = () => {
         <i className="far fa-plus-square"></i>Add job
         </NavLink>
       </NavDropdown.Item>
+      <NavDropdown.Item >
+        <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/skills/create"
+        >
+        <i className="far fa-plus-square"></i>Add a skill
+        </NavLink>
+      </NavDropdown.Item>
     </NavDropdown>
   </>
   );

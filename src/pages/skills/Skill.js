@@ -1,11 +1,11 @@
-import React from 'react';
-import styles from "../../styles/Skill.module.css";
-import { useHistory } from 'react-router-dom';
-import { axiosRes } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { Card } from 'react-bootstrap';
-import Avatar from '../../components/Avatar';
-import { MoreDropdown } from '../../components/MoreDropdown';
+import React from "react";
+import styles from "../../styles/Post.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { Card, Media } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
+import Avatar from "../../components/Avatar";
+import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 const Skill = (props) => {
     const {
@@ -13,8 +13,10 @@ const Skill = (props) => {
         owner,
         profile_id,
         profile_image,
+        title,
         content,
         image,
+        skillPage,
         updated_at,
       } = props;
 
@@ -45,7 +47,7 @@ const Skill = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && JobPage && (
+            {is_owner && skillPage && (
               <MoreDropdown
               handleEdit={handleEdit}
               handleDelete={handleDelete}

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 import Skill from './Skill';
 import PopularProfiles from '../profiles/PopularProfiles';
