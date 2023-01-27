@@ -31,6 +31,7 @@ function SkillsPage({ message, filter = ""}) {
     const fetchSkills = async () => {
       try {
         const { data } = await axiosReq.get(`/skills/?${filter}search=${query}`);
+        console.log(data, "< ====data")
         setSkills(data);
         setHasLoaded(true);
       } catch (err) {
@@ -41,7 +42,7 @@ function SkillsPage({ message, filter = ""}) {
     setHasLoaded(false);
     /* to stop the search requests after every key typed - delay response */
     const timer = setTimeout(() => {
-    //   fetchSkills();
+      fetchSkills();
     }, 1000)
     return () => {
         clearTimeout(timer)
@@ -68,14 +69,14 @@ function SkillsPage({ message, filter = ""}) {
 
             {hasLoaded ? (
                 <>
-                    {skills.results.length ? (
+                    {skills.length ? (
                         <InfiniteScroll
                         children={
-                            skills.results.map((skill) => (
+                            skills.map((skill) => (
                                 <Skill key={skill.id} {...skill} setSkills={setSkills} />
                             ))
                         }
-                        dataLength={skills.results.length}
+                        dataLength={skills.length}
                         loader={<Asset spinner />}
                         hasMore={!!skills.next}
                         next={() => fetchMoreData(skills, setSkills)} 

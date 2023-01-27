@@ -36,7 +36,7 @@ function JobsPage({message, filter = ""}) {
             }
         };
         setHasLoaded(false);
-        // fetchJobs();
+        fetchJobs();
     }, [filter, query ,pathname]);
 
   return (
@@ -59,14 +59,14 @@ function JobsPage({message, filter = ""}) {
 
         {hasLoaded ? (
             <>
-            {jobs.results.length ? (
+            {jobs.length ? (
               <InfiniteScroll
                 children={
-                    jobs.results.map((job) => (
+                    jobs.map((job) => (
                         <Job key={job.id} {...job} setJobs={setJobs} />
                       ))
                 }
-                dataLength={jobs.results.length}
+                dataLength={jobs.length}
                 loader={<Asset spinner />}
                 hasMore={!!jobs.next}
                 next={() => fetchMoreData(jobs, setJobs)}

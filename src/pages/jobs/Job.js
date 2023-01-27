@@ -9,7 +9,17 @@ import { MoreDropdown } from "../../components/MoreDropdown";
 
 const Job = (props) => {
     const {
-        id, owner, profile_id, profile_image, title, content, location, company, image, updated_at, jobPage, 
+        id, 
+        owner, 
+        profile_id, 
+        profile_image, 
+        title, 
+        content, 
+        location, 
+        company,
+        image, 
+        updated_at, 
+        jobPage, 
     } = props;
 
     const currentUser = useCurrentUser();
