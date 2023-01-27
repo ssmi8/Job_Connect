@@ -169,7 +169,7 @@ function SkillCreateForm() {
             </Col>
         </Row>
     </Form>
-  )
+  );
 }
 
-export default SkillCreateForm
+export default SkillCreateForm;

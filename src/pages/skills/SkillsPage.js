@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import Skill from '../../pages/skills/Skill';
+import Skill from './Skill';
 import Asset from '../../components/Asset';
 
 
@@ -21,25 +21,33 @@ import PopularProfiles from "../profiles/PopularProfiles";
 
 
 function SkillsPage({ message, filter = ""}) {
-    const [skills, setSkills] = useState({ results: [] });
-    const [hasLoaded, setHasLoaded] = useState(false);
-    const { pathname } = useLocation();
-
-    const [query, setQuery] = useState("");
-
-    useEffect (() => {
-        const fetchSkills = async () => {
-            try {
-                const { data } = await axiosReq.get(`/skills/?${filter}search${query}`);
-                setSkills(data);
-                setHasLoaded(true);
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        
-    }, [filter, query, pathname]);
-
+  const [skills, setSkills] = useState({ results: [] });
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const { pathname } = useLocation();
+  
+  const [query, setQuery] = useState("");
+  
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const { data } = await axiosReq.get(`/skills/?${filter}search=${query}`);
+        setSkills(data);
+        setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  
+    setHasLoaded(false);
+    /* to stop the search requests after every key typed - delay response */
+    const timer = setTimeout(() => {
+    //   fetchSkills();
+    }, 1000)
+    return () => {
+        clearTimeout(timer)
+    }
+      
+  }, [filter, query, pathname]);
 
   return (
     <Row className="h-100">
