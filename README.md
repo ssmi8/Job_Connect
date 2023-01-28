@@ -1,10 +1,14 @@
 # Job Connect - A social sharing platform for professionals
 
-(insert AmIResponsive image)
+![AmIResponsive](/documentation/amiresponsive.png)
 
 # About this wesbite:
 
 Job Connect is a social networking site which links to professionals together in a much more collaboartive way.  Linking existing sites together, such as LinkedIn and Instagram, I wanted to create a platform where professionals could interact, share their experiences in their chosen fields and help one and other in tackling their industries.  It also creates a place to meet and engage with different people who you wouldn't necessarily meet in your day to day life i.e. people working abroad.
+
+The live link to the deployed Frontend app is [here](https://job-connect.herokuapp.com/).
+
+The live link to the deployed Backend app is [here](https://connect-api-ss.herokuapp.com/).
 
 # Main Technologies Used:
 
@@ -42,9 +46,12 @@ Agile Development Process
 
 I used the Agile Process for development of this web application. The user stories are detailed below. I used the Kanban board on Github to track progress.
 
+All stories were added to the project section in github, and I put them all into the Todo section, and passed them through development when I began working on specific user stories.  Once these were complete and I was happy with it, I moved it into the completed section.
+
 To help me visualize a typical user journey around the site, I used Lucidspark to help me plan out the various routes a user could take through the site.
 
-(insert wireframes)
+![Wireframe](/documentation/wireframe_1.png "Wireframe")
+
 
 User Stories
 
@@ -92,33 +99,15 @@ User Stories
     - Update username and password: As a logged in user I can update my username and password so that I can change my display name and keep my profile secure
 
 - The Skills Page
+    - Skill page: As a user I can view the skills page so that I can find new places to learn new skills
+    - Edit skill: As a skill post owner I can edit my post title and description so that I can make corrections or update my post after it was created
+    - Delete skill: As a skill post owner I can delete my post if I no longer want to share that post
 
 - The Jobs Page
+    - Job page: As a user I can view the skills page so that I can find new places to learn new skills
+    - Edit job: As a skill post owner I can edit my post title and description so that I can make corrections or update my post after it was created
+    - Delete job: As a skill post owner I can delete my post if I no longer want to share that post
 
-
-## Inception
-
-## Iteration/Construction
-
-## Release
-
-## Production
-
-## Retirement
-
-# Strategy
-
-# Structure
-
-# User Stories
-
-## The Post Page
-
-## The Posts Page
-
-## The Profile Page
-
-# Wireframe
 
 # Deployment to Heroku
 
@@ -155,7 +144,7 @@ Final step - deployment
 - Click "Deploy branch"
 Once the program runs: You should see the message "the app was successfully deployed"
 - Click the button "View"
-The live link can be found here.
+The live link can be found [here](https://job-connect.herokuapp.com/).
 
 
 Since Heroku stopped its free service the project has been migrated and deployed through
@@ -163,8 +152,62 @@ ElephantSQL and Render
 
 # Testing
 
+## Manual Testing
+
+Manual testing has been carried throughout this project.
+
+### Manual Testing Resolutions
+
+- When posting a new skill or job, the post was not showing on their respective pages I found that I have included an extra / after the {id} element, which was causing the issues.
+
+- When applying a dropdown menu to the Job page I had not defined the jobPage function in the jobsPage, and thanks to tutor support I found the issue and managed fix it.
+
+CRUD functionalilty has been tested for eachof the following: Posts, Comments, Skills, Jobs and Profiles
+
+- Likes & Follow may only be created & deleted.
+
+- The profile may only be updated.
+
+- All nav links open to the correct page.
+
+- Pages intended for logged-in users only will redirect logged-out users back to the home page.
+
+- Users attempting to edit the content that they did not publish are redirected back to the home page.
+
+- Users are able to create a new account.
+
+- Users with an existing account are able to log in.
+
+- Each user has the ability to log out.
+
+
+# Components
+
+Several components have been implemented within this project that has been reused throughout this project:
+
+- axiosDefault.js: for ease of communication with the backend API.
+- Asset.js: to supplu the loading spinner & user Avatar throughout the site.
+- DropdownMenu.js: to allow user users to edit/delete their image posts, skill posts and job posts.
+- CurrentUserContext.js: confrm the user logged-in status to determine what functionality is available to that user.
+- ProfileDataContext.js: procide follow & unfollow ability to other users across Profile pages.
+- useRedirect.js: redirects a user to another page if they are not authorized to be on the page they are trying to access.
+- utils.js: supplies functionality to all of the components that utilize the Infinite Scroll.
+
+
+# Testing
+
+Lighthouse report
+
+
+CSS Validation
+
+
+HTML Validation
+
 
 # Improvements
+
+
 
 # References
 
