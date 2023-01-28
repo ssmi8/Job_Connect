@@ -34,7 +34,7 @@ function JobEditForm() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const { data } = await axiosReq.get(`/jobs/${id}/`);
+        const { data } = await axiosReq.get(`/jobs/${id}`);
         const { title, content, location, company, image, is_owner } = data;
 
         is_owner ? setJobData({ title, content, location, company, image }) : history.push("/");
@@ -77,7 +77,7 @@ function JobEditForm() {
     }
 
     try {
-      await axiosReq.put(`/jobs/${id}/`, formData);
+      await axiosReq.put(`/jobs/${id}`, formData);
       history.push(`/jobs/${id}`);
     } catch (err) {
       console.log(err);
