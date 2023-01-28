@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/Post.module.css";
+import styles from "../../styles/Skill.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
@@ -56,7 +56,7 @@ const Skill = (props) => {
           </div>
         </Media>
       </Card.Body>
-      <Link to={`/posts/${id}`}>
+      <Link to={`/skills/${id}`}>
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
@@ -67,4 +67,4 @@ const Skill = (props) => {
   )
 }
 
-export default Skill
+export default Skill;

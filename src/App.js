@@ -87,8 +87,8 @@ function App() {
           <Route exact path="/jobs/:id/edit" render={() => <JobEditForm />} />
           <Route exact path="/skills" render={() => <SkillsPage />} />
           <Route exact path="/skills/create" render={() => <SkillCreateForm />} />
-          <Route exact path="/skills/:id" render={() => <SkillEditForm />} />
-          <Route exact path="/skills/:id/edit" render={() => <SkillPage />} />
+          <Route exact path="/skills/:id" render={() => <SkillPage />} />
+          <Route exact path="/skills/:id/edit" render={() => <SkillEditForm />} />
           
           <Route render={() => <p>Page not found!</p>} />
         </Switch>

@@ -19,7 +19,7 @@ const Job = (props) => {
         company,
         image, 
         updated_at, 
-        jobPage, 
+        jobPage,
     } = props;
 
     const currentUser = useCurrentUser();
@@ -32,7 +32,7 @@ const Job = (props) => {
 
     const handleDelete = async () => {
       try {
-        await axiosRes.delete(`/jobs/${id}/`);
+        await axiosRes.delete(`/jobs/${id}`);
         history.goBack();
       } catch (err) {
         console.log(err);
@@ -44,17 +44,17 @@ const Job = (props) => {
         <Card.Body>
             <Media className="align-text-center justify-content-between">
                 <Link to={`/profiles/${profile_id}`}>
-                    <Avatar src={profile_image} />
+                    <Avatar src={profile_image}m height={55} />
                     {owner}
                 </Link>
                 <div className='d-flex align-items-center'>
-                    <span>{updated_at}</span>
-                    {is_owner && jobPage && (
-                      <MoreDropdown 
-                      handleEdit={handleEdit} 
-                      handleDelete={handleDelete}
-                      />
-                    )}
+                <span>{updated_at}</span>
+                 {is_owner && jobPage && (
+                   <MoreDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                   />
+                )}
                 </div>
             </Media>
         </Card.Body>

@@ -32,7 +32,7 @@ function SkillEditForm() {
   useEffect(() => {
     const handleMount = async () => {
     try {
-      const { data } = await axiosReq.get(`/skills/${id}/`);
+      const { data } = await axiosReq.get(`/skills/${id}`);
       const { title, content, image, is_owner } = data;
 
       is_owner ? setSkillData({ title, content, image }) : history.push("/");
@@ -171,4 +171,4 @@ function SkillEditForm() {
   );
 }
 
-export default SkillEditForm
+export default SkillEditForm;

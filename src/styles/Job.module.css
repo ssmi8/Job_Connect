@@ -9,15 +9,3 @@
 .job figure, h5 {
     margin: 0 0;
 }
-
-.Heart {
-    color: red;
-}
-
-.Heart:hover {
-    color: #2142b2;
-}
-
-.HeartOutline:hover {
-    color: #f85032;
-}
