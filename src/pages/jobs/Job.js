@@ -17,14 +17,15 @@ const Job = (props) => {
         content, 
         location, 
         company,
-        image, 
-        updated_at, 
+        image,
         jobPage,
+        updated_at,
     } = props;
+    
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
-    const history = useHistory;
+    const history = useHistory();
 
     const handleEdit = () => {
       history.push(`/jobs/${id}/edit`)
