@@ -36,9 +36,15 @@ function JobsPage({message, filter = ""}) {
             }
         };
         setHasLoaded(false);
-        fetchJobs();
-    }, [filter, query ,pathname]);
-
+        /* to stop the search requests after every key typed - delay response */
+        const timer = setTimeout(() => {
+          fetchJobs();
+        }, 1000)
+        return () => {
+            clearTimeout(timer)
+        }
+          
+      }, [filter, query, pathname]);
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
