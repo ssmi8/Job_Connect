@@ -39,12 +39,13 @@ function JobsPage({message, filter = ""}) {
         /* to stop the search requests after every key typed - delay response */
         const timer = setTimeout(() => {
           fetchJobs();
-        }, 1000)
+        },)
         return () => {
             clearTimeout(timer)
         }
           
       }, [filter, query, pathname]);
+
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
@@ -64,7 +65,7 @@ function JobsPage({message, filter = ""}) {
         </Form>
 
         {hasLoaded ? (
-            <>
+          <>
             {jobs.length ? (
               <InfiniteScroll
                 children={
@@ -84,11 +85,13 @@ function JobsPage({message, filter = ""}) {
             )}
           </>
         ) : (
-            console.log(('show loading spinner'))
+          <Container className={appStyles.Content}>
+            <Asset spinner />
+          </Container>
         )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <p>Popular profiles for desktop</p>
+        <PopularProfiles />
       </Col>
     </Row>
   );
