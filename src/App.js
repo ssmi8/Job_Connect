@@ -22,6 +22,7 @@ import SkillsPage from "./pages/skills/SkillsPage";
 import SkillCreateForm from "./pages/skills/SkillCreateForm";
 import SkillEditForm from "./pages/skills/SkillEditForm";
 import SkillPage from "./pages/skills/SkillPage"
+import NotFound from "./components/NotFound";
 
 
 function App() {
@@ -90,7 +91,7 @@ function App() {
           <Route exact path="/skills/:id" render={() => <SkillPage />} />
           <Route exact path="/skills/:id/edit" render={() => <SkillEditForm />} />
           
-          <Route render={() => <p>Page not found!</p>} />
+          <Route render={() => <NotFound />} />
         </Switch>
       </Container>
     </div>
