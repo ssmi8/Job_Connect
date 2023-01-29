@@ -53,7 +53,76 @@ To help me visualize a typical user journey around the site, I used Lucidspark t
 ![Wireframe](/documentation/wireframe_1.png "Wireframe")
 
 
-User Stories
+## Features:
+
+### Home Page:
+
+![HomePage](/documentation/HomePage.png "HampePage")
+
+### Nav Bar:
+
+ - During the planning phase I wanted to ensure the NavBar was restricted to three pages, which were the home page, the sign in page and the sign up page.  Non-logged in users would see posts from users, but not able to like or comment on them unless logged in.
+
+![NavBar1](/documentation/NavBar_1.png "NavBar1")
+
+- Once the user is logged in they would be able to comment and like users posts, plus would be able to access extra pages in skill and jobs, where they could find good sources of materials (recommened and posted by other users) to learn or develop their skills.  Also, they would be kept up to date with recent job postings, posted by other users.  User would also be able to access their p
+
+![NavBar2](/documentation/NavBar_2.png "NavBar2")
+
+- During the development stages, I found that the NavBar became too clustered with having three add post links, so I decided to have these in a dropdown menu, which made the page look cleaner and tidier, and have the user a better all round experience.
+
+![NavBar3](/documentation/NavBar_3.png "NavBar3")
+
+### Sign-In Page:
+
+When users come to the sign in page they can enter there username and password, if they are already registered.  If they are not, there is a quick link, underneath, to take them to the sign up page.
+
+![signin_page](/documentation/signin_page.png "signin_page")
+
+### Sign-Up Page:
+
+When users register their accounts, users will be able to choose a username and password, and then confirm their passwords.  Once signed up, they will be taken to the sign in page to log in.
+
+![signup_page](/documentation/signup_page.png "signup_page")
+
+### Add Post Page:
+
+When a user is logged in, they can post an image with a title and content.
+
+![add_post](/documentation/add_post.png "add_post")
+
+### Add Job Page:
+
+When a user is logged in, they can add a job post with a title, job role, location, company and image.
+
+![add_job](/documentation/add_job.png "add_job")
+
+### Add Job Page:
+
+When a user is logged in, they can add a skill pos with a title of the skill to learn/develop, content about the learning material with link, and an image.
+
+![add_skill](/documentation/add_skill.png "add_skill")
+
+### Feed and Liked Pages:
+
+Users can follow other users and like other user posts.  When a user does this, they can access users posts they follow in the Feed page, and they can access posts they have liked in the Liked page.  Also, as well as the Home Page, they can use search bar to find a post.
+
+![searchbar](/documentation/searchbar.png "searchbar")
+
+### Comments and Likes
+
+When a user is logged in they will be ablt to comment on other user posts. They will also have the ability to edit or delete their comments using the dropdown menu.  They can also like or unlike a post.
+
+![comments_likes](/documentation/comments_likes.png "comments_likes")
+
+
+### Edit Posts
+
+When a logged in user posts an image, skill or job opportunity, they will have the ability to edit or delete said post via a dropdown menu.
+
+![edit_post](/documentation/edit_post.png "edit_post")
+
+## User Stories
 
 - Navigation & Authentication
     - Navigation: As a user I can view a navbar from every page so that I can navigate easily between pages
@@ -151,6 +220,22 @@ The live link can be found [here](https://job-connect.herokuapp.com/).
 Since Heroku stopped its free service the project has been migrated and deployed through
 ElephantSQL and Render
 
+
+
+
+# Components
+
+Several components have been implemented within this project that has been reused throughout this project:
+
+- axiosDefault.js: for ease of communication with the backend API.
+- Asset.js: to supplu the loading spinner & user Avatar throughout the site.
+- DropdownMenu.js: to allow user users to edit/delete their image posts, skill posts and job posts.
+- CurrentUserContext.js: confrm the user logged-in status to determine what functionality is available to that user.
+- ProfileDataContext.js: procide follow & unfollow ability to other users across Profile pages.
+- useRedirect.js: redirects a user to another page if they are not authorized to be on the page they are trying to access.
+- utils.js: supplies functionality to all of the components that utilize the Infinite Scroll.
+
+
 # Testing
 
 ## Manual Testing
@@ -181,33 +266,17 @@ CRUD functionalilty has been tested for eachof the following: Posts, Comments, S
 
 - Each user has the ability to log out.
 
-
-# Components
-
-Several components have been implemented within this project that has been reused throughout this project:
-
-- axiosDefault.js: for ease of communication with the backend API.
-- Asset.js: to supplu the loading spinner & user Avatar throughout the site.
-- DropdownMenu.js: to allow user users to edit/delete their image posts, skill posts and job posts.
-- CurrentUserContext.js: confrm the user logged-in status to determine what functionality is available to that user.
-- ProfileDataContext.js: procide follow & unfollow ability to other users across Profile pages.
-- useRedirect.js: redirects a user to another page if they are not authorized to be on the page they are trying to access.
-- utils.js: supplies functionality to all of the components that utilize the Infinite Scroll.
-
-
-# Testing
-
 Lighthouse report
 
+Light house testing was performed and found performance to be poor. While this is to be expected with so many images, this could be improved in the future by compressing images before uploading them. Unfortunately, I did not have time to implement this functionality in this iteration.
+
+![lighthouse_report](/documentation/lighthouse_report.png "lighthouse_report")
 
 CSS Validation
 
+All CSS files were individually validated and came back with no errors.
 
-HTML Validation
-
-
-# Improvements
-
+![cssvalidation](/documentation/css_validator.png "cssvalidation")
 
 
 # References
