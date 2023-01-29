@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
+import { Form, Row, Col, Container } from "react-bootstrap";
 
 import Skill from './Skill';
 import Asset from '../../components/Asset';

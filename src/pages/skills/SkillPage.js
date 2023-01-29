@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { axiosReq } from '../../api/axiosDefaults';
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+
+import { Row, Col } from "react-bootstrap";
 
 import Skill from './Skill';
 import PopularProfiles from '../profiles/PopularProfiles';
