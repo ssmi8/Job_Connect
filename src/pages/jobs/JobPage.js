@@ -19,7 +19,7 @@ function JobPage() {
                 ])
                 setJob({results: [job]})                
             } catch (err){
-                console.log(err)
+                
             }
         }
         handleMount();

@@ -33,7 +33,7 @@ function JobEditForm() {
 
         is_owner ? setJobData({ title, content, location, company, image }) : history.push("/");
       } catch (err) {
-        console.log(err);
+       
       }
     };
 
@@ -74,7 +74,7 @@ function JobEditForm() {
       await axiosReq.put(`/jobs/${id}`, formData);
       history.push(`/jobs/${id}`);
     } catch (err) {
-      console.log(err);
+     
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

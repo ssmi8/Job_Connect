@@ -28,7 +28,7 @@ function JobsPage({message, filter = ""}) {
                 setJobs(data)
                 setHasLoaded(true)
             } catch(err){
-                console.log(err)
+               
     
             }
         };

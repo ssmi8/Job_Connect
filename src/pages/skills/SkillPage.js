@@ -20,7 +20,7 @@ function SkillPage() {
                 ]);
                 setSkill({ results: [skill] });
             } catch (err) {
-                console.log(err);
+               
             }
         };
         handleMount();

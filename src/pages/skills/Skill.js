@@ -33,7 +33,7 @@ const Skill = (props) => {
           await axiosRes.delete(`/skills/${id}`);
           history.goBack();
         } catch (err) {
-          console.log(err);
+          
         }
       };
       

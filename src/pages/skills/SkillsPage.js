@@ -28,11 +28,10 @@ function SkillsPage({ message, filter = ""}) {
     const fetchSkills = async () => {
       try {
         const { data } = await axiosReq.get(`/skills/?${filter}search=${query}`);
-        console.log(data, "< ====data")
         setSkills(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+       
       }
     };
   

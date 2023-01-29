@@ -59,7 +59,7 @@ function JobCreateForm() {
         const { data } = await axiosReq.post("/jobs/", formData);
         history.push(`/jobs/${data.id}`);
     } catch (err) {
-        console.log(err);
+        
         if (err.response?.status !== 401) {
             setErrors(err.response?.data);
         }

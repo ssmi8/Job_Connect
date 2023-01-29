@@ -57,7 +57,7 @@ function SkillCreateForm() {
             const { data } = await axiosReq.post("/skills/", formData);
             history.push(`/skills/${data.id}`);
         } catch(err) {
-            console.log(err);
+            
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

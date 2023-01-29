@@ -31,7 +31,7 @@ function SkillEditForm() {
 
       is_owner ? setSkillData({ title, content, image }) : history.push("/");
     } catch (err) {
-      console.log(err);
+      
     }
     };
     handleMount();
@@ -69,7 +69,7 @@ function SkillEditForm() {
       await axiosReq.put(`/skills/${id}/`, formData);
       history.push(`/skills/${id}`);
     } catch (err) {
-      console.log(err);
+     
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
